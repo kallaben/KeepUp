@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Circle
+namespace CircleGame
 {
     class Program
     {
@@ -11,8 +11,8 @@ namespace Circle
         {
             Application.EnableVisualStyles();
             TestForm testForm = new TestForm();
-            Console.WriteLine(testForm.Width);
             Application.Run(testForm);
+
         }
     }
 }
