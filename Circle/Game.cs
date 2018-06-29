@@ -12,6 +12,8 @@ namespace CircleGame
         private double playerSpeed = 0.05;
         private bool isLeftPressed;
         private bool isRightPressed;
+        private ArcMover arcMover = new ArcMover();
+        private PlayerPhysics playerPhysics = new PlayerPhysics();
         Timer timer = new Timer();
 
         public Game(int width, int height)
@@ -43,11 +45,11 @@ namespace CircleGame
         {
             if (e.KeyCode == Keys.Left)
             {
-                isLeftPressed = true;
+                playerPhysics.AccelerateLeft();
             }
             else if (e.KeyCode == Keys.Right)
             {
-                isRightPressed = true;
+                playerPhysics.AccelerateRight();
             }
         }
 
@@ -55,11 +57,11 @@ namespace CircleGame
         { 
             if (e.KeyCode == Keys.Left)
             {
-                isLeftPressed = false;
+                playerPhysics.StopAccelerateLeft();
             }
             else if (e.KeyCode == Keys.Right)
             {
-                isRightPressed = false;
+                playerPhysics.StopAccelerateRight();
             }
         }
 
@@ -85,6 +87,12 @@ namespace CircleGame
 
         private void UpdateGameLogic()
         {
+            double speed = arcMover.getSpeed();
+            circle.GetArc().MoveClockwise(speed);
+
+            playerPhysics.CalculateVelocityThisTick();
+            circle.GetPlayerDot().MoveCounterClockwise(playerPhysics.GetVelocity());
+
             if (isLeftPressed)
             {
                 circle.GetPlayerDot().MoveCounterClockwise(playerSpeed);
