@@ -23,11 +23,7 @@ namespace CircleTest
         {
             PlayerDot playerDot = new PlayerDot(200);
 
-            Console.WriteLine(playerDot.GetPosition());
-
             playerDot.MoveClockwise(Math.PI);
-
-            Console.WriteLine(playerDot.GetPosition());
 
             Point expectedPosition = new Point(200, 400);
             Assert.AreEqual(expectedPosition, playerDot.GetPosition());
@@ -38,14 +34,34 @@ namespace CircleTest
         {
             PlayerDot playerDot = new PlayerDot(200);
 
-            Console.WriteLine(playerDot.GetPosition());
-
             playerDot.MoveCounterClockwise(Math.PI);
-
-            Console.WriteLine(playerDot.GetPosition());
 
             Point expectedPosition = new Point(200, 400);
             Assert.AreEqual(expectedPosition, playerDot.GetPosition());
+        }
+
+        [TestMethod]
+        public void MoveClockwiseGetRadian()
+        {
+            PlayerDot playerDot = new PlayerDot(200);
+            double startRadian = playerDot.GetRadian();
+
+            playerDot.MoveClockwise(1.2);
+
+            double expectedRadian = startRadian - 1.2;
+            Assert.AreEqual(expectedRadian, playerDot.GetRadian());
+        }
+
+        [TestMethod]
+        public void MoveCounterClockwiseGetRadian()
+        {
+            PlayerDot playerDot = new PlayerDot(200);
+            double startRadian = playerDot.GetRadian();
+
+            playerDot.MoveCounterClockwise(0.6);
+
+            double expectedRadian = startRadian + 0.6;
+            Assert.AreEqual(expectedRadian, playerDot.GetRadian());
         }
     }
 }

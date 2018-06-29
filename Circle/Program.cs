@@ -10,9 +10,8 @@ namespace CircleGame
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();
-            TestForm testForm = new TestForm();
+            Game testForm = new Game(500, 500);
             Application.Run(testForm);
-
         }
     }
 }

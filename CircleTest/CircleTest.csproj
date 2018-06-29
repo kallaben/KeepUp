@@ -52,6 +52,7 @@
     <Compile Include="CircleTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PlayerDotTest.cs" />
+    <Compile Include="CircleArcTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

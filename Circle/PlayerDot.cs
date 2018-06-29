@@ -27,6 +27,11 @@ namespace CircleGame
             return position;
         }
 
+        public double GetRadian()
+        {
+            return radians;
+        }
+
         public void MoveClockwise(double radians)
         {
             this.radians -= radians % (2*pi);

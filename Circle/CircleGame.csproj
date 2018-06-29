@@ -46,11 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Circle.cs" />
-    <Compile Include="Engine\InputListener.cs" />
+    <Compile Include="CircleArc.cs" />
     <Compile Include="PlayerDot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestForm.cs">
+    <Compile Include="Game.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
