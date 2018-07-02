@@ -14,7 +14,7 @@ namespace CircleGame
         public double getSpeed()
         {
             calculateSpeed();
-            return 0.03 * speed;
+            return 0.02 * speed;
         }
 
         private void calculateSpeed()

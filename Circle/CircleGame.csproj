@@ -48,6 +48,8 @@
     <Compile Include="ArcMover.cs" />
     <Compile Include="Circle.cs" />
     <Compile Include="CircleArc.cs" />
+    <Compile Include="CircleDrawer.cs" />
+    <Compile Include="CollisionDetector.cs" />
     <Compile Include="PlayerDot.cs" />
     <Compile Include="PlayerPhysics.cs" />
     <Compile Include="Program.cs" />

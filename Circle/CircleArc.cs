@@ -22,12 +22,21 @@ namespace CircleGame
         private void calculateRadians()
         {
             leftRadian = (middleRadian + arcWidth / 2) % (2 * Math.PI);
+            if (leftRadian < 0)
+            {
+                leftRadian += 2 * Math.PI;
+            }
             rightRadian = (middleRadian - arcWidth / 2) % (2 * Math.PI);
+
+            if (rightRadian < 0)
+            {
+                rightRadian += 2 * Math.PI;
+            }
         }
 
         public void MoveClockwise(double radians)
         {
-            if (middleRadian - (radians % (2 * Math.PI)) <= 0)
+            if (middleRadian - (radians % (2 * Math.PI)) < 0)
             {
                 this.middleRadian -= (radians % (2 * Math.PI)) - (Math.PI * 2);
             }

@@ -35,6 +35,14 @@ namespace CircleGame
         public void MoveClockwise(double radians)
         {
             this.radians -= radians % (2*pi);
+            if (this.radians < 0)
+            {
+                this.radians += 2 * Math.PI;
+            }
+            else if (this.radians > 2 * pi)
+            {
+                this.radians -= 2 * pi;
+            }
             position.X = Convert.ToInt32(center.X + radius * Math.Cos(this.radians));
             position.Y = Convert.ToInt32(center.X - radius * Math.Sin(this.radians));
         }
@@ -42,6 +50,14 @@ namespace CircleGame
         public void MoveCounterClockwise(double radians)
         {
             this.radians += radians % (2*pi);
+            if (this.radians < 0)
+            {
+                this.radians += 2 * Math.PI;
+            }
+            else if (this.radians > 2*pi)
+            {
+                this.radians -= 2 * pi;
+            }
             position.X = Convert.ToInt32(center.X + radius * Math.Cos(this.radians));
             position.Y = Convert.ToInt32(center.X - radius * Math.Sin(this.radians));
         }

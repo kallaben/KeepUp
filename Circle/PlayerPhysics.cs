@@ -63,6 +63,11 @@ namespace CircleGame
             accelerateRight = false;
         }
 
+        public void ResetVelocity()
+        {
+            velocity = 0;
+        }
+
         public double GetAcceleration()
         {
             return acceleration;
